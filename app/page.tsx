@@ -1,6 +1,6 @@
 import Header from "@/components/ui/hero/Header";
-import ImageCard from "@/components/ui/hero/ImageCard";
-import StackedImageCards from "@/components/ui/hero/StackedImageCards";
+import Image from "next/image";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
@@ -31,7 +31,23 @@ const HomePage = () => {
 
       <div className="col-span-2 md:col-span-1 min-h-96 md:min-h-screen">
         <div className="flex items-center justify-center h-full">
-          <StackedImageCards />
+          <div className="p-4">
+            <Image
+              src="/hero.png"
+              height={700}
+              width={700}
+              alt="Man woman working on project"
+              className="mb-8"
+            />
+            <div className="flex justify-center">
+              <Link
+                href={"/projects/trending"}
+                className="btn btn-outline btn-md md:btn-lg"
+              >
+                Trending Projects
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

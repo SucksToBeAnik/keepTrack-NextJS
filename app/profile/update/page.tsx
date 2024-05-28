@@ -28,7 +28,7 @@ const ProfileUpdatePage = () => {
   }, []);
 
   return (
-    <div className="mt-36 container mx-auto max-w-5xl">
+    <div className="mt-36 container mx-auto max-w-4xl">
       <div className="grid grid-cols-3 min-h-[500px]">
         <div className="hidden col-span-1 w-full h-full bg-dark dark:bg-light rounded-l-md md:flex justify-center items-center">
           <div className="flex flex-col justify-center items-center gap-8">
