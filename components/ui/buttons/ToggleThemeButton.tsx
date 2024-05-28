@@ -18,10 +18,6 @@ const ToggleThemeButton = () => {
     }
   }
 
-  // useEffect(()=>{
-
-  // },[])
-  console.log("REndered");
   useEffect(() => {
     const existingTheme = localStorage.getItem("theme");
     if (existingTheme && ["retro", "coffee"].includes(existingTheme)) {

@@ -15,22 +15,25 @@ const Avatar = () => {
       setImageSource(image);
     }
     callGetCurrentProfileImage();
-  },[]);
+  }, []);
 
-  if(!imageSource) return <span className="loading loading-dots loading-sm"></span>
   return (
     <div>
       <SignedIn>
-        <Image
-          src={imageSource}
-          height={24}
-          width={24}
-          alt="Profile picture"
-          className="rounded-full object-cover border-orange-500"
-        />
+        {imageSource ? (
+          <Image
+            src={imageSource}
+            height={24}
+            width={24}
+            alt="Profile picture"
+            className="rounded-full object-cover border-orange-500"
+          />
+        ) : (
+          <span className="loading loading-dots loading-sm"></span>
+        )}
       </SignedIn>
       <SignedOut>
-      <LuUser2 className="h-5 w-5" />;
+        <LuUser2 className="h-5 w-5" />
       </SignedOut>
     </div>
   );
