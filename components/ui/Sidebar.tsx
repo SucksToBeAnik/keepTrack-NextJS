@@ -4,10 +4,13 @@ import { useRef } from "react";
 import { IoClose } from "react-icons/io5";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import LoginLogoutButton from "./buttons/LoginLogutButton";
-
+import {useAuth} from "@clerk/nextjs"
+import Menubar from "./Menubar";
 
 const Sidebar = () => {
   const ref = useRef<HTMLInputElement>(null);
+
+  const {userId} = useAuth()
   return (
     <div className="drawer drawer-end z-50">
       <input
@@ -40,28 +43,15 @@ const Sidebar = () => {
                 ref.current.checked = false;
               }
             }}
-            className="btn btn-circle btn-primary absolute right-2 top-2"
+            className="btn btn-circle btn-primary absolute right-8 top-2"
           >
             <IoClose className="h-5 w-5" />
           </button>
 
           <LoginLogoutButton />
-          {/* <div className="flex justify-end items-center gap-4 mt-16">
-            <SignedOut>
-              <SignInButton mode="modal" fallbackRedirectUrl="/profile/create">
-                <button className="btn btn-link text-3xl text-white">
-                  Login
-                </button>
-              </SignInButton>
-            </SignedOut>
-            <SignedIn>
-              <SignOutButton>
-                <button className="btn btn-link text-3xl text-white">
-                  Logout
-                </button>
-              </SignOutButton>
-            </SignedIn>
-          </div> */}
+          <div className="flex justify-center items-center">
+            <Menubar />
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
-const Profile = ()=> {
+const ProfilePage = ()=> {
     return (
         <div>
-            Profile
+            profile
         </div>
     )
 }
 
-export default Profile;
+export default ProfilePage;

@@ -9,7 +9,7 @@ const LoginLogoutButton = ()=> {
     return (
          <div className="flex justify-end items-center gap-4 mt-16">
             <SignedOut>
-              <SignInButton mode="modal" fallbackRedirectUrl="/profile/create">
+              <SignInButton mode="modal">
                 <button className="btn btn-link text-3xl text-white">
                   Login
                 </button>

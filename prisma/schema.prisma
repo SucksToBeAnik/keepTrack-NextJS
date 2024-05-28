@@ -16,7 +16,7 @@ datasource db {
 
 model Profile {
   id String @id @default(cuid())
-  ClerkID String @unique
+  clerkID String @unique
   firstName String
   lastName String
   username String

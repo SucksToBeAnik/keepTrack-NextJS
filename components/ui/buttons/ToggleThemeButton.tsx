@@ -7,27 +7,35 @@ import { ThemeVariation } from "@/utils/types";
 
 const ToggleThemeButton = () => {
   const [currentTheme, setCurrentTheme] = useState<ThemeVariation>();
+
   function handleChangeTheme() {
-    if (currentTheme === "COFFEE") {
-      setCurrentTheme("RETRO");
-      localStorage.setItem("theme", "RETRO");
+    if (currentTheme === "coffee") {
+      setCurrentTheme("retro");
+      localStorage.setItem("theme", "retro");
     } else {
-      setCurrentTheme("COFFEE");
-      localStorage.setItem("theme", "COFFEE");
+      setCurrentTheme("coffee");
+      localStorage.setItem("theme", "coffee");
     }
   }
 
+  // useEffect(()=>{
+
+  // },[])
+  console.log("REndered");
   useEffect(() => {
     const existingTheme = localStorage.getItem("theme");
-    if (existingTheme && ["RETRO", "COFFEE"].includes(existingTheme)) {
+    if (existingTheme && ["retro", "coffee"].includes(existingTheme)) {
       setCurrentTheme(existingTheme as ThemeVariation);
+    }else{
+      setCurrentTheme("coffee")
+      localStorage.setItem("theme","coffee")
     }
     themeChange(false);
   }, []);
 
   return (
     <div className="btn btn-circle bg-secondary" onClick={handleChangeTheme}>
-      {currentTheme === "COFFEE" ? (
+      {currentTheme === "coffee" ? (
         <button
           data-set-theme="retro"
           data-act-class="ACTIVECLASS"
